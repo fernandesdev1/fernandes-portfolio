@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Github, Mail } from 'lucide-react';
+import { Menu, X, Github } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 
 const Navbar = () => {
