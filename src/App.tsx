@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import ProjectCard from './components/ProjectCard';
 import { portfolioData } from './data/portfolio';
 import { Code2, Braces, Database, Globe, Mail, MessageCircle } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 function App() {
   return (
