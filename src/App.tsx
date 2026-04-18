@@ -3,7 +3,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProjectCard from './components/ProjectCard';
 import { portfolioData } from './data/portfolio';
-import { Code2, Braces, Database, Globe, Mail } from 'lucide-react';
+import { Code2, Braces, Database, Globe, Mail, MessageCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   return (
@@ -84,19 +85,53 @@ function App() {
               <Mail className="w-5 h-5 text-primary" />
               {portfolioData.contact.email}
             </a>
+            <a
+              href={`https://wa.me/${portfolioData.contact.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-8 py-4 glass rounded-full hover:bg-white/10 transition-all font-bold border border-primary/20 hover:border-primary/50"
+            >
+              <MessageCircle className="w-5 h-5 text-primary" />
+              WhatsApp
+            </a>
             <div className="flex gap-4">
               <a
                 href={portfolioData.contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 glass rounded-full hover:bg-white/10 transition-colors"
+                title="GitHub"
               >
                 <Code2 className="w-6 h-6" />
+              </a>
+              <a
+                href={`https://wa.me/${portfolioData.contact.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 glass rounded-full hover:bg-white/10 transition-colors"
+                title="WhatsApp"
+              >
+                <MessageCircle className="w-6 h-6 text-[#25D366]" />
               </a>
             </div>
           </div>
         </section>
       </main>
+
+      {/* Floating WhatsApp Button */}
+      <motion.a
+        href={`https://wa.me/${portfolioData.contact.whatsapp}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-8 right-8 z-50 p-4 bg-[#25D366] text-white rounded-full shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 transition-shadow hidden md:flex"
+        title="Fale comigo no WhatsApp"
+      >
+        <MessageCircle className="w-7 h-7 fill-current" />
+      </motion.a>
 
       <footer className="py-12 border-t border-white/5 text-center text-white/20 text-sm">
         <p>&copy; {new Date().getFullYear()} {portfolioData.name}. Todos os direitos reservados.</p>

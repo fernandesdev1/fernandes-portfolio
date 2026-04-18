@@ -38,6 +38,7 @@ export const portfolioData = {
   contact: {
     github: "https://github.com/fernandesdev1",
     email: "nandessdev@gmail.com", // Placeholder
-    linkedin: "https://www.linkedin.com/in/lindoberto-fernandes-499598404" // Placeholder
+    linkedin: "https://www.linkedin.com/in/lindoberto-fernandes-499598404", // Placeholder
+    whatsapp: "5532998663423"
   }
 };
